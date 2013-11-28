@@ -1,7 +1,7 @@
 components
 ==========
 
-Motivation.
+1) Motivation.
 
 The main motivation for the Components class is handling default arguments. This implementation is designed (unlike boost.parameter) to support several sets of default arguments. It often happens that a function takes many arguments, but only some of them are really needed, the rest having default values. The other motivation is that sometimes one would like to keep all the arguments grouped together. This way arguments can be easily moved around. Another advantage of this design is that we can keep many different configurations of default arguments. An instance of the Components class represents one configuration of default arguments.
 Motivating example
@@ -56,7 +56,8 @@ Later on a user can construct the DoStuffComponents as follows
     DoStuffComponents<MyInitImpl, MyStartImpl, MyStopImpl> doStuffComponents3;
 
 This is the main motivation but the library consists of much more handy ways of manipulating the Components.
-Defining Components
+
+2) Defining Components
 
 The type of the component can be any type including references. Default parameters can be specified for any number of last components. One can define components using template aliasing (preferred)
 
@@ -75,7 +76,7 @@ This can also be done without template aliasing
     //user:
     DoStuffComponents::type<MyInitImpl, MyStartImpl, MyStopImpl> doStuffComponents;
 
-Constructing Components
+3) Constructing Components
 
 There are several ways of contructing components:
 
@@ -126,7 +127,7 @@ There are several ways of contructing components:
     If the deduced type should be reference, the std::ref wraper should be used.
 
 The important thing is that components do not have to be default constructible unless it is acctually default constructed.
-Replacing Components
+4) Replacing Components
 
 There is a way to replace component for given components.
 
@@ -140,7 +141,7 @@ There is a way to replace component for given components.
     double d(5);
     Replaced replaced = replace<Start>(d, comps); //replacing component
 
-Comparison to other libraries
+5) Comparison to other libraries
 
     Boost.Parameter
 
@@ -154,10 +155,10 @@ Comparison to other libraries
 
     Although the idea of Components is very similar to boost fusion, the Components gives some functionalities that are not offered by Boost.Fusion. The example is different initialization methods (see section:Constructing Components for more details).
 
-Supported Compilers
+6) Supported Compilers
 
     clang 3.2
     g++ 4.7.2
 
 Msvc is not supported, because of lack of the template aliasing.
-Iterating Over Components class (TODO)
+7) Iterating Over Components class (TODO)
