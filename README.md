@@ -161,4 +161,5 @@ There is a way to replace component for given components.
     g++ 4.7.2
 
 Msvc is not supported, because of lack of the template aliasing.
+
 7) Iterating Over Components class (TODO)
