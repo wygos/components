@@ -121,12 +121,15 @@ There are several ways of contructing components:
 
         typedef Components<Init, Start, Stop> DoStuffComponents;
 
+    If the deduced type should be reference, the std::ref wraper should be used.
+    
         int a;
         auto myComps = DoStuffComponents::make_components(1, a, std::ref(a));
 
-    If the deduced type should be reference, the std::ref wraper should be used.
+
 
 The important thing is that components do not have to be default constructible unless it is acctually default constructed.
+
 4) Replacing Components
 
 There is a way to replace component for given components.
